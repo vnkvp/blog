@@ -4,6 +4,7 @@
   "description": "node.jsblog\u001b[D\u001b[D\u001b[D\u001b[D-",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,20 +18,20 @@
   },
   "homepage": "https://github.com/vnkvp/blog#readme",
   "dependencies": {
-    "express": "^4.17.1",
     "body-parser": "1.19.0",
-    "pug": "*",
-    "cookie-parser": "1.4.4",
-    "morgan": "1.9.1",
-    "serve-favicon": "2.5.0",
-    "debug": "4.1.1",
-    "mongodb": "*",
-    "monk": "*",
     "connect-flash": "*",
-    "express-validator": "*",
-    "express-session": "*",
+    "cookie-parser": "1.4.4",
+    "debug": "4.1.1",
+    "express": "^4.17.1",
     "express-messages": "*",
+    "express-session": "*",
+    "express-validator": "*",
+    "moment": "*",
+    "mongodb": "^3.2.7",
+    "monk": "*",
+    "morgan": "1.9.1",
     "multer": "*",
-    "moment": "*"
+    "pug": "*",
+    "serve-favicon": "2.5.0"
   }
 }
