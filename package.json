@@ -1,37 +1,25 @@
 {
-  "name": "blog",
-  "version": "1.0.0",
-  "description": "node.jsblog\u001b[D\u001b[D\u001b[D\u001b[D-",
-  "main": "index.js",
+  "name": "debug",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vnkvp/blog.git"
-  },
-  "author": "vnkvp",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/vnkvp/blog/issues"
-  },
-  "homepage": "https://github.com/vnkvp/blog#readme",
   "dependencies": {
-    "body-parser": "1.19.0",
-    "connect-flash": "*",
-    "cookie-parser": "1.4.4",
-    "debug": "4.1.1",
-    "express": "^4.17.1",
-    "express-messages": "*",
-    "express-session": "*",
-    "express-validator": "*",
-    "moment": "*",
-    "mongodb": "^3.2.7",
-    "monk": "*",
-    "morgan": "1.9.1",
-    "multer": "*",
+    "cookie-parser": "*",
+    "debug": "*",
+    "express": "*",
+    "http-errors": "*",
+    "morgan": "*",
     "pug": "*",
-    "serve-favicon": "2.5.0"
+    "mongodb": "*",
+    "monk": "*",
+    "connect-flash": "*",
+    "express-validator": "*",
+    "express-session": "*",
+    "express-messages": "*",
+    "multer": "*",
+    "body-parser": "*",
+    "moment": "*"
   }
 }
