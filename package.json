@@ -11,7 +11,7 @@
     "express": "*",
     "http-errors": "*",
     "morgan": "*",
-    "pug": "*",
+    "ejs": "*",
     "mongodb": "*",
     "monk": "*",
     "connect-flash": "*",

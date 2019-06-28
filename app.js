@@ -1,27 +1,49 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var session = require('express-session');
-var logger = require('morgan');
-var expressValidator = require('express-validator');
-var mongo = require('mongodb');
-var db = require('monk')('localhost/blog');
-var multer = require('multer');
-var flash = require('connect-flash');
-var bodyParser = require('body-parser');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const logger = require('morgan');
+const expressValidator = require('express-validator');
+const mongo = require('mongodb');
+const db = require('monk')('localhost/blog');
+const multer = require('multer');
+const flash = require('connect-flash');
+const bodyParser = require('body-parser');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+app.set('view engine', 'ejs');
 
-/*file uploads & multipart data
-app.use(multer({dest:'./uploads/'})).single('photo');*/
+//storage engine
+const storage = multer.diskStorage({
+destination: './upload',
+filename: (req, file, callback)=>{
+  callback(null, file.fieldname+'-'+Date.now()+path.extname(file.originalname));
+}
+});
+
+// upload
+const upload = multer({storage: storage}).single('post');
+
+app.post('/upload', (req, res)=>{
+upload(req, res, (err)=>{
+if(err){
+res.render('index', {
+  msg: err
+});
+}else{
+  console.log(req.file);
+  res.send('test');
+}
+})
+
+});
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
